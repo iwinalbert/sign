@@ -1,0 +1,8 @@
+numpy
+opencv-python
+flask
+mediapipe
+pyttsx3
+datasets
+huggingface_hub
+pandas

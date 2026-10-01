@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EDGE SIGN</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+<div class="page">
+
+    <header>
+        <div class="eyebrow">EDGE AI DEVICE</div>
+
+        <h1>EDGE SIGN</h1>
+
+        <p>
+            Real-Time Sign Language → Speech Translator
+        </p>
+    </header>
+
+
+    <main>
+
+        <section class="camera-card">
+
+            <div class="card-title">
+                LIVE CAMERA
+            </div>
+
+            <div class="camera-frame">
+                <img
+                    src="{{ url_for('video_feed') }}"
+                    alt="Live camera feed"
+                >
+            </div>
+
+        </section>
+
+
+        <section class="result-card">
+
+            <div class="card-title">
+                DETECTED SIGN
+            </div>
+
+            <div
+                id="gesture"
+                class="gesture"
+            >
+                —
+            </div>
+
+            <div
+                id="confidence"
+                class="confidence"
+            >
+                0.0%
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="status-row">
+                <span>STATUS</span>
+                <strong id="status">
+                    STARTING
+                </strong>
+            </div>
+
+            <div class="status-row">
+                <span>AI</span>
+                <strong id="ai-mode">
+                    LOCAL
+                </strong>
+            </div>
+
+            <div class="status-row">
+                <span>INFERENCE</span>
+                <strong id="latency">
+                    0 ms
+                </strong>
+            </div>
+
+            <div class="status-row">
+                <span>FPS</span>
+                <strong id="fps">
+                    0
+                </strong>
+            </div>
+
+            <div
+                id="speech"
+                class="speech"
+            >
+                READY
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Raspberry Pi • Local Edge AI • Offline Speech
+    </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
